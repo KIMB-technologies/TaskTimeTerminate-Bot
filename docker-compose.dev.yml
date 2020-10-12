@@ -1,0 +1,23 @@
+# # # # # 
+# File only for development !!!
+# # # # # 
+
+version: "2"
+
+services:
+  ttt_bot:
+    build:
+      context: .
+    container_name: ttt_bot
+    ports:
+      - "8080:80"
+    volumes:
+      - ./bot/:/code/bot/
+      - ./data/:/code/data
+    environment:
+      - DEVMODE=true
+      - WEBHOOK_URL=https://example.com/telegrambot/ITYFNobd7CfNRd8ojFzhrNhFJ2dSEfai41mwc3KqzXlOTgia6M/ # external URL to container, needs https!!
+      - WEBHOOK_UNREGISTER=false # container will register webhook if not already registered if false, will unregister if true
+      - REGISTER_TOKEN=qu4YqS82Uf9GAywfVEZW5PhCr9GpFPWuoPaRwK8koR1BUADZCx # token users need to use this bot
+      - TELEGRAM_API_KEY=02679459:dpcnQ5kY7aHg4vAICc0VYZSWaMJsA77POO67Hx0p0jmbMdgQRNAbx4pMcAFD # telegram api key (for bot account)
+      - TELEGRAM_BOT_NAME=MySuperBot  # name of bot in telegram (without @)

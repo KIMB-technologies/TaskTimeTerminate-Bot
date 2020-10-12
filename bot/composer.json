@@ -1,0 +1,15 @@
+{
+	"name": "kimb-technologies/tasktimeterminate-bot",
+	"type": "project",
+	"description": "A Telegram Bot for TaskTimeTerminate by KIMB-technologies",
+	"keywords": ["telegram", "bot", "tasktimeterminate"],
+	"license": "GPLv3",
+	"homepage": "https://github.com/KIMB-technologies/TaskTimeTerminate-Bot",
+	"support": {
+		"issues": "https://github.com/KIMB-technologies/TaskTimeTerminate-Bot/issues",
+		"source": "https://github.com/KIMB-technologies/TaskTimeTerminate-Bot"
+	},
+	"require": {
+		"longman/telegram-bot": "*"
+	}
+}
