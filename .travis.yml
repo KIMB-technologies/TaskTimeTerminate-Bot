@@ -1,7 +1,7 @@
 services:
   - docker
-	  
- jobs:
+
+jobs:
   include:
     - stage: build docker image
       script: bash ./dockerpublish.sh
