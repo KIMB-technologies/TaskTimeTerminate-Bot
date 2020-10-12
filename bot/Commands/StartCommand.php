@@ -44,7 +44,7 @@ class StartCommand extends SystemCommand
 			return $this->replyToUser('You have started the bot already. Use /ttt or /task!');
 		}
 		else {
-			$token = $this->getMessage()->getText(true);
+			$token = \TTTBot\Utilities::trimAndConvertInput($this->getMessage()->getText(true));
 			if( empty($token) ){
 				return $this->replyToUser(
 					'This bot requires you to register for the usage. Please get a token from your admin or host your own version!' . PHP_EOL .

@@ -51,7 +51,7 @@ class TaskCommand extends SystemCommand
 		 * Handle new Tasks
 		 */
 
-		$text = $this->getMessage()->getText(true);
+		$text = \TTTBot\Utilities::trimAndConvertInput($this->getMessage()->getText(true));
 		
 		$th = new \TTTBot\AddTaskHelper($session);
 		$th->taskCommand($text);

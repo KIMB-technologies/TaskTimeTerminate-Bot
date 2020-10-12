@@ -52,7 +52,7 @@ class GenericmessageCommand extends SystemCommand
 			return $this->replyToUser('Please use the commands /ttt and /task!');
 		}
 		else{
-			$text = $this->getMessage()->getText(true);
+			$text = \TTTBot\Utilities::trimAndConvertInput($this->getMessage()->getText(true));
 
 			switch($handler) {
 				case "categoryAdd":

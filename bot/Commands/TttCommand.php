@@ -50,7 +50,7 @@ class TttCommand extends SystemCommand
 		 * Handle normal TTT Commands
 		 */
 		// get command
-		$command = $this->getMessage()->getText(true);
+		$command = \TTTBot\Utilities::trimAndConvertInput($this->getMessage()->getText(true));
 		$command = explode(' ', $command);
 
 		// disallowed

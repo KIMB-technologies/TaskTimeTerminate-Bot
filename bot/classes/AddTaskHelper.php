@@ -35,20 +35,22 @@ class AddTaskHelper {
 		if(!empty($params)){
 			$params = \explode(' ', $params);
 			if(\count($params) === 3){
-				$this->runTTT($params[2], $params[0], $params[1]);
+				$this->runTTT(trim($params[2]), trim($params[0]), trim($params[1]));
 			}
 			else if(\count($params) === 1 &&
 				$this->session->getData('lastCategory') !== false &&
 				$this->session->getData('lastTask') !== false
 			){
 				$time = str_replace('+', '', $params[0]);
-				$this->runTTT($time, $this->session->getData('lastCategory'), $this->session->getData('lastTask'));
+				$this->runTTT(trim($time), $this->session->getData('lastCategory'), $this->session->getData('lastTask'));
 			}
 			else{
+				$this->runTTT("", "", "");
 				$this->answer = "Use `/task Category Task 20m` or `/task +20m` or just `/task` for Step-by-Step query"; 
 			}
 		}
 		else{
+			$this->runTTT("", "", "");
 			$this->answer = "Recoding new Task Step-by-Step, one may also use `/task Category Task 20m` or `/task +20m`." . PHP_EOL;
 			$this->answer .= TTTLoader::runTTTCommand(['c', 'c', 'list']);
 			$this->answer .= "Please choose a category:";
@@ -62,7 +64,7 @@ class AddTaskHelper {
 		switch($this->session->getTemp('taskStep')){
 			case "category":
 				$this->answer = "Please give the name of the task now:";
-					$this->session->setData('lastCategory', $text);
+				$this->session->setData('lastCategory', $text);
 				$this->session->setTemp('taskStep', 'task');
 				break;
 			case "task":

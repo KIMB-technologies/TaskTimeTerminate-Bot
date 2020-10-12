@@ -64,6 +64,14 @@ class Utilities {
 		}
 		return $r;
 	}
+
+	public static function trimAndConvertInput(string $s) : string {
+		return \str_replace(
+				['ä','ü','ö','ß','Ä','Ü','Ö'],
+				['ae','ue','oe','ss','Ae','Ue','Oe'],
+				trim($s)
+			);
+	}
 }
 
 ?>
