@@ -41,7 +41,7 @@ try {
 					exec('php /code/bot/cronHelper.php "'. str_replace('"', '', $key) .'"');
 					Longman\TelegramBot\Request::sendMessage([
 						'chat_id' => $user['id'],
-						'text' => 'Your task is over!' . PHP_EOL . 'Need more time? `\task +30m`',
+						'text' => 'Your task is over!' . PHP_EOL . 'Need more time? `/task +30m`',
 						'parse_mode' => 'Markdown'
 					]);
 				}
