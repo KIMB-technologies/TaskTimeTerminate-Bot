@@ -60,7 +60,7 @@ class JSONReader extends Reader {
 		$this->filehandler = fopen( $this->filepath . '.lock', 'c+' );
 		if( !flock( $this->filehandler, $lockex ? LOCK_EX : LOCK_SH ) ){
 			// error
-			throw new Exception('Unable to lock file!');
+			throw new \Exception('Unable to lock file!');
 		}
 
 		//open file
@@ -78,7 +78,7 @@ class JSONReader extends Reader {
 		}
 		else{
 			//error
-			throw new Exception('Unable to find file or folder!');
+			throw new \Exception('Unable to find file or folder!');
 		}
 		
 		// no data => empty array
@@ -92,7 +92,7 @@ class JSONReader extends Reader {
 		$this->data = json_decode( $this->data, true);
 		//error, if no json etc.
 		if( !is_array( $this->data ) ){
-			throw new Exception('Zombiefile!');	
+			throw new \Exception('Zombiefile!');	
 		}
 
 		//Check if file is writeable?
@@ -194,7 +194,7 @@ class JSONReader extends Reader {
 			else{
 				//Exception?
 				if( $exception ){
-					throw new Exception( "Unknown Index" );
+					throw new \Exception( "Unknown Index" );
 				}
 				//Fehler
 				return false;

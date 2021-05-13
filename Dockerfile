@@ -1,4 +1,4 @@
-FROM kimbtechnologies/php_nginx:latest 
+FROM kimbtechnologies/php_nginx:8-latest 
 
 # copy into webroot
 COPY ./other/hook.php  /php-code/hook.php

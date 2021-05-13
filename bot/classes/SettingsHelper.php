@@ -32,7 +32,7 @@ class SettingsHelper {
 				break;
 
 			case "Server URI:\t\t":
-				if( !@filter_var($text, FILTER_VALIDATE_URL, FILTER_FLAG_HOST_REQUIRED | FILTER_FLAG_SCHEME_REQUIRED)
+				if( !@filter_var($text, FILTER_VALIDATE_URL)
 					|| substr($text, 0, 4) !== 'http'
 					|| strpos($text, 'localhost') !== false
 					|| strpos($text, ':9000') !== false

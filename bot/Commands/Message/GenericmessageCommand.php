@@ -101,7 +101,6 @@ class GenericmessageCommand extends SystemCommand
 					return $this->replyToChat($th->getReplyText(), $opts);
 				default:
 					return $this->replyToChat('Unknown message handler – this should not have happened!');
-					break;
 			}
 
 			$session->setTemp('messageHandler', false);
